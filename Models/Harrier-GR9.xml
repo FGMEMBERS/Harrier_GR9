@@ -1,0 +1,1465 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+
+<path>gr9vs2.ac</path> 
+<offsets>
+      <x-m> 0 </x-m>
+      <y-m> 0 </y-m>
+      <z-m> 0 </z-m>
+    </offsets>
+	
+	<!-- MP sound -->
+<sound>
+<path>Aircraft/Harrier-GR9/Sounds/MP-Sound.xml</path>
+</sound>
+
+<!-- Cockpit Glass -->
+<animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+  <object-name>canopy-glass</object-name>
+<object-name>front-glass</object-name>
+
+  </animation>
+	
+<!-- fuselage reflection -->
+  
+  <effect>
+    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <object-name>spine</object-name>
+    <object-name>fuselage-main</object-name>
+    <object-name>nose-sensor</object-name>
+    <object-name>fuselage-outer</object-name>
+    <object-name>fin</object-name>
+    <object-name>rudder</object-name>
+    <object-name>tail-cone</object-name>
+    <object-name>left-elevator</object-name>
+    <object-name>right-elevator</object-name>
+    <object-name>right-wing</object-name>
+    <object-name>left-wing</object-name>
+    <object-name>left-bogie-fairing</object-name>
+    <object-name>right-bogie-fairing</object-name>
+    <object-name>right-wing-fence</object-name>
+    <object-name>right-wing-fence</object-name>
+    <object-name>FLGrDoor</object-name>
+    <object-name>FRGrDoor</object-name>
+    <object-name>MLGrDoor</object-name>
+	<object-name>MRGrDoor</object-name>
+	<object-name>MStrut</object-name>
+	<object-name>airBrake</object-name>
+	<object-name>right-fairing.001</object-name>
+	<object-name>right-fairing</object-name>
+	<object-name>left-fairing</object-name>
+	<object-name>left-fairing.001</object-name>
+	<object-name>canopy-frame</object-name>
+	<object-name>front-canopy-frame</object-name>
+        
+  </effect> 
+  <!-- stick and pedals -->
+  
+  <model>
+    <path>Aircraft/Harrier_GR9/Models/interior/divers/stick.xml</path>
+    <offsets>
+      <x-m> 2.75 </x-m>
+      <y-m> -00 </y-m>
+      <z-m> 0.375 </z-m>
+      <pitch-deg>-0</pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Harrier_GR9/Models/interior/divers/pedals.xml</path>
+    <offsets>
+      <x-m> 2.6 </x-m>
+      <y-m> -00 </y-m>
+      <z-m> 0.35 </z-m>
+      <pitch-deg>-0</pitch-deg>
+    </offsets>
+  </model>
+  
+  
+  
+  
+	<!-- Include the 3d Panel -->
+ 
+	<!-- Front hotspots  -->
+	<panel>
+		<path>Aircraft/Harrier_GR9/Models/interior/panel-hotspots.xml</path>
+		<bottom-left>
+			<x-m>2.58</x-m>
+			<y-m>-0.40</y-m>
+			<z-m>-5.8</z-m>
+		</bottom-left>
+		<bottom-right>
+			<x-m>-15.7</x-m>
+			<y-m> 0.40</y-m>
+			<z-m>-5.8</z-m>
+		</bottom-right>
+		<top-left>
+			<x-m>-15.73</x-m>
+			<y-m>-0.40</y-m>
+			<z-m>-5.1</z-m>
+		</top-left>
+ 	</panel> 
+	
+	<model>
+		<path>Aircraft/Harrier_GR9/Models/interior/harrier-panel.xml</path>
+	</model>
+	-->
+	<!-- include the external equipment 
+	<model>
+		<path>Aircraft/harrier/Models/equipment.xml</path>
+	</model>
+	-->
+	
+	<!-- Pilot -->
+	<model>
+		<path>Aircraft/Harrier_GR9/Models/pilot/pilot.xml</path>
+			<offsets>
+			<x-m>3.1</x-m>
+			<y-m>0</y-m>
+			<z-m>0.6</z-m>
+			<pitch-deg>6.0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<!-- Pilot invisible from internally -->
+
+    <animation>
+        <type>select</type>
+        <object-name>Pilot</object-name>
+		<object-name>Torso</object-name>
+		<object-name>Mask</object-name>
+		<object-name>Helmet</object-name>
+		<condition>
+<not>
+            <property>sim/current-view/internal</property>
+</not>
+        </condition>
+    </animation>		
+	
+	
+	<!--
+	<model>
+		<path>Aircraft/harrier/Models/seat.xml</path>
+			<offsets>
+			<x-m>-15.25</x-m>
+			<y-m>0</y-m>
+			<z-m>-5.8</z-m>
+			<pitch-deg>6.0</pitch-deg>
+		</offsets>
+	</model>
+-->
+
+  <!-- Landing Lights  -->
+	<animation>
+		<type>select</type>
+		<object-name>FLandLight</object-name>
+		<condition>
+			<equals>
+				<property>gear/gear[0]/position-norm</property>
+				<value>1</value>
+			 </equals>
+		</condition>
+	</animation>
+
+ 	<animation>
+	<type>material</type>
+	<object-name>FLandLight</object-name>
+		<emission>
+		<factor-prop>controls/lighting/landing</factor-prop>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</emission>
+	</animation>
+
+        <!-- +++++++++++++++++++++++++++++++++++ -->
+	<!-- ++++++++++++++ ANIMATIONS +++++++++ -->
+	<!-- +++++++++++++++++++++++++++++++++++ -->
+
+
+<!-- <animation> -->
+<!-- <type>shader</type> -->
+<!-- <shader>chrome</shader> -->
+<!-- <texture>Aircraft/harrier/Models/Textures/glass_shader.png</texture> -->
+<!-- <object-name>Bubble</object-name>-->
+<!-- </animation> -->
+	
+	<!-- Gear extend or retract --> 
+	
+   <animation>
+		<type>translate</type>
+		<object-name>FrontTire</object-name>
+		<object-name>FrontUpperStrut</object-name>
+		<object-name>FrontMiddleStrut</object-name>
+		<object-name>FrontLowerStrut</object-name>	
+		<object-name>FLandLight</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.59</dep>
+			</entry>
+			<entry>
+				<ind>0.64</ind>
+				<dep>0.39</dep>
+    			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>0</dep>
+    			</entry>
+		</interpolation>
+		<center>
+			<x-m>3.72</x-m>
+			<y-m>0</y-m>
+			<z-m>0.52</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>FrontTire</object-name>
+		<object-name>FrontUpperStrut</object-name>
+		<object-name>FrontMiddleStrut</object-name>
+		<object-name>FrontLowerStrut</object-name>	
+		<object-name>FLandLight</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>92</dep>
+			</entry>
+			<entry>
+				<ind>0.5</ind>
+				<dep>37</dep>
+    			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>0</dep>
+    			</entry>
+		</interpolation>
+		<center>
+			<x-m>3.72</x-m>
+			<y-m>0</y-m>
+			<z-m>0.52</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+      <animation>
+		<type>translate</type>
+		<object-name>midtyres</object-name>
+		<object-name>MStrut</object-name>
+		<object-name>MAxle</object-name>
+		<property>gear/gear[1]/position-norm[1]</property>
+			<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>0.4</ind>
+				<dep>0.2</dep>
+    			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>0.45</dep>
+    			</entry>
+		</interpolation>
+		<center>
+			<x-m>8.031</x-m>
+			<y-m>0</y-m>
+			<z-m>0.130</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+    	<animation>
+		<type>rotate</type>
+		<object-name>midtyres</object-name>
+		<object-name>MStrut</object-name>
+		<object-name>MAxle</object-name>
+		<property>gear/gear[1]/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>-94</dep>
+			</entry>
+			<entry>
+				<ind>0.5</ind>
+				<dep>-43</dep>
+    			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>0</dep>
+    			</entry>
+		</interpolation>
+		<center>
+			<x-m>8.031</x-m>
+			<y-m>0</y-m>
+			<z-m>0.130</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>translate</type>
+		<object-name>left-bogie-strut</object-name>
+		<object-name>left-bogie-tyre</object-name>
+		<object-name>right-bogie-tyre</object-name>
+		<object-name>right-bogie-strut</object-name>	 
+		<property>gear/gear[2]/position-norm</property>
+			<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.79</dep>
+			</entry>
+			<entry>
+				<ind>0.4</ind>
+				<dep>0.32</dep>
+    			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>0</dep>
+    			</entry>
+		</interpolation>
+		<center>
+			<x-m>8.38</x-m>
+			<y-m>0</y-m>
+			<z-m>0.48</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>left-bogie-strut</object-name>
+		<object-name>left-bogie-tyre</object-name>
+		<object-name>right-bogie-tyre</object-name>
+		<object-name>right-bogie-strut</object-name>	 
+		<property>gear/gear[2]/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>90</dep>
+			</entry>
+			<entry>
+				<ind>0.5</ind>
+				<dep>63</dep>
+    			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>0</dep>
+    			</entry>
+		</interpolation>
+		<center>
+			<x-m>8.38</x-m>
+			<y-m>0</y-m>
+			<z-m>0.48</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<!-- Gear Doors -->
+	<animation>
+		<type>rotate</type>
+		<object-name>FBGrDoor</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.2</ind>
+				<dep>120</dep>
+    			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>120</dep>
+    			</entry>
+		</interpolation>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>4.093</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.162</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>FLGrDoor</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.1</ind>
+				<dep>90</dep>
+			</entry>
+			<entry>
+				<ind>0.9</ind>
+				<dep>90</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+            <offset-deg>0</offset-deg>
+		<center>
+			<x-m>2.720</x-m>
+			<y-m>-0.16</y-m>
+			<z-m>-0.12</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>FRGrDoor</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.1</ind>
+				<dep>90</dep>
+			</entry>
+			<entry>
+				<ind>0.9</ind>
+				<dep>90</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+            <offset-deg>0</offset-deg>
+		<center>
+			<x-m>2.720</x-m>
+			<y-m>0.16</y-m>
+			<z-m>-0.12</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>MRGrDoor</object-name>
+		<property>gear/gear[0]/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>    
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.1</ind>
+				<dep>90</dep>
+			</entry>
+			<entry>
+				<ind>0.9</ind>
+				<dep>90</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>0</dep>
+			</entry> 
+              <offset-deg>0</offset-deg>
+		</interpolation>
+		<center>
+			<x-m>8.38</x-m>
+			<y-m>0.27</y-m>
+			<z-m>-0.049</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>MLGrDoor</object-name>
+		<property>gear/gear[0]/position-norm[1]</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.1</ind>
+				<dep>90</dep>
+			</entry>
+			<entry>
+				<ind>0.9</ind>
+				<dep>90</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+            <offset-deg>0</offset-deg>
+		<center>
+			<x-m>8.38</x-m>
+			<y-m>-0.267</y-m>
+			<z-m>-0.044</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<!-- Gear disapears when raised -->
+
+<animation>
+        <type>select</type>
+        <object-name>FrontUpperStrut</object-name>
+        <object-name>FrontMiddleStrut</object-name>
+        <object-name>FrontLowerStrut</object-name>
+		<object-name>FrontTire</object-name>
+        <object-name>FLandLight</object-name>
+        <object-name>midtyres</object-name>
+        <condition>
+        <property>gear/gear[0]/position-norm</property>
+        </condition>
+    </animation>
+	
+	
+	<!-- Steering -->
+	<animation>
+		<type>rotate</type>
+		<object-name>FrontTire</object-name>
+		<object-name>FrontLowerStrut</object-name>
+		<object-name>FrontMiddleStrut</object-name>
+		<property>gear/gear[0]/caster-angle-deg[0]</property>
+		<factor>-1</factor>
+		<center>
+			<x-m>3.723</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.18</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<!-- Gear Compression (shocks) -->
+	<animation>
+		<type>rotate</type>
+		<object-name>FrontTire</object-name>
+		<object-name>FrontLowerStrut</object-name>	 
+		<property>gear/gear[0]/compression-norm[0]</property>
+			<interpolation>
+			<entry>
+				<ind>0.0</ind>    
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.33</ind>
+				<dep>11</dep>
+			</entry>
+			<entry>
+				<ind>0.66</ind>
+				<dep>22</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>34</dep>
+			</entry> 
+              <offset-deg>0</offset-deg>
+		</interpolation>
+		<center>
+			<x-m>3.55</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.526</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>right-bogie-tyre</object-name>
+		<object-name>right-bogie-strut</object-name>
+		<property>gear/gear[3]/compression-norm[0]</property>
+		<factor>0.063</factor>
+            	<center>
+			<x-m>8.39</x-m>
+			<y-m>2.68</y-m>
+			<z-m>-0.43</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>left-bogie-strut</object-name>
+		<object-name>left-bogie-tyre</object-name>
+		<property>gear/gear[2]/compression-norm[0]</property>
+            	<factor>0.063</factor>
+            	<center>
+			<x-m>8.39</x-m>
+			<y-m>-2.68</y-m>
+			<z-m>-0.43</z-m>
+                  </center> 
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>midtyres</object-name>
+		<object-name>MStrut</object-name>		
+		<property>gear/gear[1]/compression-norm[0]</property>
+			<interpolation>
+			<entry>
+				<ind>0.0</ind>    
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>0.33</ind>
+				<dep>0.075</dep>
+			</entry>
+			<entry>
+				<ind>0.66</ind>
+				<dep>0.13</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>0.24</dep>
+			</entry> 
+              <offset-deg>0</offset-deg>
+		</interpolation>
+            	<center>
+			<x-m>7.98</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.21</z-m>
+                  </center>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+
+	<!-- Control Surfaces -->	
+         <animation>
+		<type>rotate</type>
+		<object-name>Rudder</object-name> 
+		<property>controls/flight/rudder[0]</property>
+		<factor>30</factor>
+			<axis>
+      <x1-m>  12.95 </x1-m>
+      <y1-m>  0.0 </y1-m>
+      <z1-m>  1.33 </z1-m>
+      <x2-m>  13.245 </x2-m>
+      <y2-m>  0.0 </y2-m>
+      <z2-m>  2.763 </z2-m>
+    </axis>
+	</animation>	
+      
+	<animation>
+		<type>rotate</type>
+		<object-name>left-elevator</object-name>  		
+		<property>controls/flight/elevator[0]</property>
+		<factor>-15</factor>
+		<offset-deg>0</offset-deg>
+		<axis>
+      <x1-m>  11.81 </x1-m>
+      <y1-m> -0.045 </y1-m>
+      <z1-m>  1.019 </z1-m>
+      <x2-m>  12.18 </x2-m>
+      <y2-m> -1.30 </y2-m>
+      <z2-m>  0.649 </z2-m>
+    </axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>right-elevator</object-name>  		
+		<property>controls/flight/elevator[0]</property>
+		<factor>15</factor>
+		<offset-deg>0</offset-deg>
+		<axis>
+      <x1-m>  11.81 </x1-m>
+      <y1-m>  0.045 </y1-m>
+      <z1-m>  1.019 </z1-m>
+      <x2-m>  12.18 </x2-m>
+      <y2-m>  1.30 </y2-m>
+      <z2-m>  0.649 </z2-m>
+    </axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>leftaileron</object-name> 
+		<property>controls/flight/aileron[0]</property>
+		<factor>-25</factor>
+		<offset-deg>0</offset-deg>
+          <axis>
+          <x1-m>  8.32 </x1-m>
+          <y1-m>  -2.983 </y1-m>
+          <z1-m>  0.647 </z1-m>
+          <x2-m>  9.011 </x2-m>
+          <y2-m>  -4.573 </y2-m>
+          <z2-m>  0.267 </z2-m>
+          </axis>
+	  </animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>rightaileron</object-name> 
+		<property>controls/flight/aileron[0]</property>
+		<factor>-25</factor>
+		<offset-deg>0</offset-deg>
+	<axis>
+          <x1-m>  8.32 </x1-m>
+          <y1-m>  2.983 </y1-m>
+          <z1-m>  0.647 </z1-m>
+          <x2-m>  9.011 </x2-m>
+          <y2-m>  4.573 </y2-m>
+          <z2-m>  0.267 </z2-m>
+          </axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>leftflap</object-name> 
+		<property>controls/flight/flaps[0]</property>
+		<factor>-50</factor>
+		<offset-deg>0</offset-deg>
+	     <axis>
+          <x1-m>  7.781 </x1-m>
+          <y1-m>  -1.123 </y1-m>
+          <z1-m>  1.042 </z1-m>
+          <x2-m>  8.064 </x2-m>
+          <y2-m>  -2.453 </y2-m>
+          <z2-m>  0.763 </z2-m>
+          </axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>rightflap</object-name> 
+		<property>controls/flight/flaps[0]</property>
+		<factor>50</factor>
+		<offset-deg>0</offset-deg>
+		 <axis>
+          <x1-m>  7.781 </x1-m>
+          <y1-m>  1.123 </y1-m>
+          <z1-m>  1.042 </z1-m>
+          <x2-m>  8.064 </x2-m>
+          <y2-m>  2.453 </y2-m>
+          <z2-m>  0.763 </z2-m>
+          </axis>
+	</animation>	
+	
+	<!-- Nozzle Rotation --> 
+	<animation>
+		<type>rotate</type>
+		<object-name>LFNozzle</object-name>
+		<object-name>RFNozzle</object-name>	 
+		<property>/controls/engines/engine/mixture</property>
+		<factor>-100</factor>
+		<offset-deg>98</offset-deg>
+		<center>
+			<x-m>5.897</x-m>
+			<y-m>0</y-m>
+			<z-m>0.502</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>LRNozzle</object-name>
+		<object-name>RRNozzle</object-name>	 
+		<property>/controls/engines/engine/mixture</property>
+		<factor>-100</factor>
+		<offset-deg>98</offset-deg>
+		<center>
+			<x-m>7.668</x-m>
+			<y-m>0</y-m>
+			<z-m>0.502</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<!-- FlightStick -->
+
+	<!-- animation>
+		<type>rotate</type>
+		<object-name>Stick</object-name>	 
+		<property>controls/flight/aileron[0]</property>
+		<factor>17</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>-15.52</x-m>
+			<y-m>0</y-m>
+			<z-m>-5.94</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation -->
+
+	<!-- animation>
+		<type>rotate</type>
+		<object-name>Stick</object-name>	 
+		<property>controls/flight/elevator[0]</property>
+		<factor>17</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>-15.52</x-m>
+			<y-m>0</y-m>
+			<z-m>-5.94</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation -->
+	
+	<!-- Rudder Pedals -->	
+	<!-- animation>
+		<type>translate</type>
+		<object-name>RRudderPed</object-name>
+		<property>controls/flight/rudder[0]</property>
+		<factor>.05</factor>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation -->
+
+	<!-- animation>
+		<type>translate</type>
+		<object-name>LRudderPed</object-name>
+		<property>controls/flight/rudder[0]</property>
+		<factor>.05</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation -->
+
+	<!-- animation>
+		<type>rotate</type>
+		<object-name>LToeBrake</object-name>	 
+		<property>controls/gear/brake-left[0]</property>
+		<factor>17</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>-15.81</x-m>
+			<y-m>0</y-m>
+			<z-m>-5.87</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation -->
+
+	<!-- animation>
+		<type>rotate</type>
+		<object-name>RToeBrake</object-name>	 
+		<property>controls/gear/brake-right[0]</property>
+		<factor>17</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>-15.81</x-m>
+			<y-m>0</y-m>
+			<z-m>-5.87</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation -->
+
+	<!-- THROTTLE LEVER -->
+	<!-- animation>
+		<type>rotate</type>
+		<object-name>ThrottleLever</object-name>	 
+		<property>controls/engines/engine/throttle</property>
+		<factor>45</factor>
+		<offset-deg>-25</offset-deg>
+		<center>
+			<x-m>-15.60</x-m>
+			<y-m>0</y-m>
+			<z-m>-5.81</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation -->	
+
+	<!-- NOZZLE VECTOR LEVER -->
+
+	<!-- animation>
+		<type>rotate</type>
+		<object-name>VectorLever</object-name>	 
+		<property>controls/engines/engine/mixture</property>
+		<factor>45</factor>
+		<offset-deg>-25</offset-deg>
+		<center>
+
+			<x-m>-15.60</x-m>
+			<y-m>0</y-m>
+			<z-m>-5.81</z-m>			
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation -->	
+	
+
+
+
+      <!-- Air Brake -->
+ 
+	<animation>
+		<type>rotate</type>
+		<object-name>airbrake</object-name>
+		<property>surface-positions/speedbrake-pos-norm</property>
+		<factor>60</factor>
+		<offset-deg>0</offset-deg>
+		<center>
+			<x-m>9.972</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.0850</z-m>			
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+ 	</animation>
+
+	<!-- Intake Doors -->
+	<animation>
+		<type>translate</type>
+		<object-name>inlet-flaps</object-name>			
+	     <property>/controls/engines/engine/mixture</property>
+			<interpolation>
+			<entry>
+				<ind>0.0</ind>    
+				<dep>0.08</dep>
+			</entry>
+			<entry>
+				<ind>0.27</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>0.66</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>0.0</dep>
+			</entry> 
+              <offset-deg>0</offset-deg>
+		</interpolation>
+            	<center>
+			<x-m>4.198</x-m>
+			<y-m>0</y-m>
+			<z-m>0.021</z-m>
+                  </center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>	
+		</animation>
+	
+	
+	
+	<!-- fan blades --> 
+	<!-- animation>
+		<type>spin</type>
+		<object-name>FanBlades</object-name>
+		<property>engines/engine/n1</property>
+		<factor>100</factor>   
+		<center>
+			<x-m>-14.04</x-m>
+			<y-m>-0.02</y-m>
+			<z-m>-5.86</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+ 	</animation -->	
+ 	
+     <!-- animation>
+ 	 <type>select</type>
+	  <object-name>Pilot</object-name>
+	  <object-name>Visor</object-name>
+	  <object-name>Torso</object-name>
+	  <object-name>Mask</object-name>
+	  <object-name>Helmet</object-name>
+	  <object-name>seat</object-name>
+	  <condition>
+	   <equals>
+	    <property>sim/current-view/internal</property>
+	   <value>false</value>
+	   </equals>
+	 </condition>
+      </animation>-->
+
+		<!-- some of the panel lighting. most of it is done in each instrument's xml
+		this turns things black!
+	<animation>
+		<type>material</type>
+		<object-name>Cube.039</object-name>
+		<object-name>numPad</object-name>
+		<object-name>knobPanel</object-name>	
+		<object-name>xtraInsts</object-name>
+		<object-name>AuxPanel</object-name>
+		<object-name>Knob.003</object-name>
+		<object-name>flip</object-name>
+		<object-name>RedButton</object-name>
+		<object-name>ThrottleBase</object-name>
+		<object-name>Cube.027</object-name>
+		<object-name>NotAHandle</object-name>
+		<emission>
+			<red>0.10</red>
+			<green>0.05</green>
+			<blue>0.0</blue>
+			<factor-prop>sim/model/material/instruments/factor</factor-prop>
+		</emission>
+	</animation>	
+	<animation>
+		<type>material</type>
+		<object-name>Cockpit</object-name>
+		<object-name>numPadButtons</object-name>
+		<object-name>Knob</object-name>
+		<object-name>toggleBase.002</object-name>
+		<object-name>HUDframe</object-name>
+		<object-name>BubbleFrame</object-name>
+		<object-name>MidPanel</object-name>
+		<emission>
+			<red>0.10</red>
+			<green>0.01</green>
+			<blue>0.0</blue>
+			<factor-prop>sim/model/material/instruments/factor</factor-prop>
+		</emission>
+	</animation>	-->
+
+ <!-- Right Bomb 
+ <model>
+  <path>Aircraft/harrier/Models/Stores/Bomb/bomb2.xml</path>
+  <offsets>
+			<x-m>-10.9</x-m>
+			<y-m>-2.84</y-m>
+			<z-m>-6.2</z-m>
+  </offsets>
+ </model>
+-->
+ <!-- Left Bomb 
+ <model>
+  <path>Aircraft/harrier/Models/Stores/Bomb/bomb.xml</path>
+  <offsets>
+			<x-m>-10.9</x-m>
+			<y-m>2.84</y-m>
+			<z-m>-6.2</z-m>
+  </offsets>
+ </model>
+
+	<model>
+		<name>RAden</name>
+		<path>Aircraft/harrier/Models/ADENpod.ac</path>
+			<offsets>
+			<x-m>-12.5</x-m>
+			<y-m>0.52</y-m>
+			<z-m>-6.7</z-m>
+			<roll-deg>27</roll-deg>
+		</offsets>
+	</model>
+	<model>
+		<name>LAden</name>
+		<path>Aircraft/harrier/Models/ADENpod.ac</path>
+		<offsets>
+			<x-m>-12.5</x-m>
+			<y-m>-0.52</y-m>
+			<z-m>-6.7</z-m>
+			<roll-deg>-27</roll-deg>
+		</offsets>
+	</model>
+	<model>
+		<name>RGunPylon</name>
+		<path>Aircraft/harrier/Models/optionalPylon.ac</path>
+		<offsets>
+			<x-m>-12.5</x-m>
+			<y-m>0.52</y-m>
+			<z-m>-6.7</z-m>
+			<roll-deg>27</roll-deg>
+		</offsets>
+	</model>
+	<model>
+		<name>LGunPylon</name>
+		<path>Aircraft/harrier/Models/optionalPylon.ac</path>
+		<offsets>
+			<x-m>-12.5</x-m>
+			<y-m>-0.52</y-m>
+			<z-m>-6.7</z-m>
+			<roll-deg>-27</roll-deg>
+		</offsets>
+	</model>
+-->
+<!--	<model>
+		<name>LeftExTank</name>
+		<path>Aircraft/harrier/Models/exTank.ac</path>
+		<offsets>
+			<x-m>-10.9</x-m>
+			<y-m>-2.84</y-m>
+			<z-m>-6.2</z-m>
+			<pitch-deg>0.0</pitch-deg>
+		</offsets>
+	</model>	
+	<model>
+		<name>RightExTank</name>
+		<path>Aircraft/harrier/Models/exTank.ac</path>
+		<offsets>
+			<x-m>-10.9</x-m>
+			<y-m>2.84</y-m>
+			<z-m>-6.2</z-m>
+			<pitch-deg>0.0</pitch-deg>
+		</offsets>
+	</model> -->
+
+<!-- Lights -->
+<model>
+    <path>Aircraft/Harrier_GR9/Models/lights/RedLight.xml</path>
+    <offsets>
+      <x-m>  8.2 </x-m>
+      <y-m> -4.6 </y-m>
+      <z-m> 0.3 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Harrier_GR9/Models/lights/GreenLight.xml</path>
+    <offsets>
+      <x-m>  8.2 </x-m>
+      <y-m>  4.6 </y-m>
+      <z-m> 0.3 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Harrier_GR9/Models/lights/StrobeWhite.xml</path>
+    <offsets>
+      <x-m>  7 </x-m>
+      <y-m>0 </y-m>
+      <z-m> 1.37 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Harrier_GR9/Models/lights/StrobeWhite.xml</path>
+    <offsets>
+      <x-m>  9.5 </x-m>
+      <y-m>  0 </y-m>
+      <z-m> -0.17 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- Taxi light cone -->  
+  
+<model>
+<path>Aircraft/Harrier_GR9/Models/lights/landinglight.xml</path>
+<name>NoseGearLandinglight</name>     
+<condition>
+ <equals>
+<property>gear/gear[0]/position-norm</property>
+<value type="bool">true</value>
+ </equals>
+  </condition>
+
+<offsets>
+<x-m>3.45 </x-m>
+<y-m>0 </y-m>
+<z-m>-0.608 </z-m>
+<pitch-deg>-10.000 </pitch-deg>
+<heading-deg>0.000 </heading-deg>     
+</offsets>
+</model>
+
+  
+  <model>
+    <name>Taxi-Light-Left</name>
+    <path>Aircraft/Harrier_GR9/Models/lights/light-cone.xml</path>
+    <offsets>
+      <x-m>3.42 </x-m>
+<y-m>0 </y-m>
+<z-m>-0.608 </z-m>
+<pitch-deg>-5.000 </pitch-deg>
+<heading-deg>0.000 </heading-deg>  
+    </offsets>
+  </model>
+
+  
+
+  <animation>
+    <type>select</type>
+    <object-name>Taxi-Light-Left</object-name>
+    
+    <condition>
+      <equals>
+        <property>gear/gear[0]/position-norm</property>
+        <value> 1 </value>
+      </equals>
+    </condition>
+  </animation> 
+  
+  <!-- smoke and trails -->
+  <model>
+    <path>Aircraft/Harrier_GR9/Models/Effects/tiptrail/tiptrail.xml</path>
+    <offsets>
+      <x-m>  8.2 </x-m>
+      <y-m> -4.6 </y-m>
+      <z-m> 0.3 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Droite -->
+  <model>
+    <path>Aircraft/Harrier_GR9/Models/Effects/tiptrail/tiptrail.xml</path>
+    <offsets>
+      <x-m>  8.2 </x-m>
+      <y-m>  4.6 </y-m>
+      <z-m> 0.3 </z-m>
+    </offsets>
+  </model>
+
+  
+  <model>
+    <path>Aircraft/Harrier_GR9/Models/Effects/smoke/smokeL.xml</path>
+    <offsets>
+      <x-m>  6 </x-m>
+      <y-m> -0.883 </y-m>
+      <z-m> 0.5 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Droite -->
+  <model>
+    <path>Aircraft/Harrier_GR9/Models/Effects/smoke/smokeL.xml</path>
+    <offsets>
+      <x-m>  6 </x-m>
+      <y-m>  0.883 </y-m>
+      <z-m> 0.5 </z-m>
+    </offsets>
+  </model>
+
+
+<model>
+    <path>Aircraft/Harrier_GR9/Models/Effects/trail/trailL.xml</path>
+    <offsets>
+       <x-m>  6 </x-m>
+      <y-m> -0.883 </y-m>
+      <z-m> 0.5 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Droite -->
+  <model>
+    <path>Aircraft/Harrier_GR9/Models/Effects/trail/trailL.xml</path>
+    <offsets>
+      <x-m>  6 </x-m>
+      <y-m>  0.883 </y-m>
+      <z-m> 0.5 </z-m>
+    </offsets>
+  </model>
+  
+  
+  <!--- Special FX -->
+  
+  <!-- aircraft wash modeled in the lines below -->
+  <model>
+    <name>aircraft_wash_l</name>
+    <path>Aircraft/Harrier_GR9/Models/Effects/wash/aircraft_wash.xml</path>
+    <condition>
+    <equals>
+    <property>controls/state/low_level</property>
+    <value>1</value>
+    </equals>
+    </condition>
+    <offsets>
+      <x-m> 25.00 </x-m>
+      <y-m>  4.50 </y-m>
+      <z-m>  0.00 </z-m>
+      <pitch-deg> 0 </pitch-deg>
+    </offsets>
+  </model>
+ 
+  <model>
+    <name>aircraft_wash_r</name>
+    <path>Aircraft/Harrier_GR9/Models/Effects/wash/aircraft_wash.xml</path>
+    <condition>
+      <equals>
+        <property>controls/state/low_level</property>
+        <value>1</value>
+      </equals>
+    </condition>
+    <offsets>
+      <x-m> 25.00 </x-m>
+      <y-m> -4.50 </y-m>
+      <z-m>  0.00 </z-m>
+      <pitch-deg>0</pitch-deg>
+    </offsets>
+  </model>
+  
+  <animation>
+    <type>translate</type>
+    <object-name>aircraft_wash_l</object-name>
+    <object-name>aircraft_wash_r</object-name>
+    <property>position/altitude-agl-ft</property>
+    <condition>
+      <equals>
+        <property>controls/state/low_level</property>
+        <value>1</value>
+      </equals>
+    </condition>
+    <interpolation>
+      <entry><ind>   0 </ind><dep>   0 </dep></entry>
+      <entry><ind> 300 </ind><dep> -90 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  1 </z>
+    </axis>
+  </animation>
+  
+  
+  <model>
+		<path>Aircraft/Harrier_GR9/Models/Effects/fx/fx2.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model> 
+  
+  <!-- External loads -->
+<model>
+<path>Aircraft/Harrier_GR9/Models/weapons/loads.xml</path>
+<offsets>
+      <x-m> 6.5 </x-m>
+      <y-m> 0 </y-m>
+      <z-m> 0.13 </z-m>
+    </offsets>
+</model> 
+
+<!-- fan blades -->
+<model>
+		<path>Aircraft/Harrier_GR9/Models/fan.xml</path>
+		<offsets>
+			<x-m>18.9</x-m>
+			<y-m>0.03</y-m>
+			<z-m>6.55</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model> 
+	
+	<!-- fuel probe -->
+<model>
+		<path>Aircraft/Harrier_GR9/Models/fuelprobe.xml</path>
+		<offsets>
+			<x-m>10</x-m>
+			<y-m>-0.9</y-m>
+			<z-m>0.95</z-m>
+			<pitch-deg>9</pitch-deg>
+			<heading-deg>-5</heading-deg>
+			<roll-deg>5</roll-deg>
+		</offsets>
+	</model> 
+  
+</PropertyList>

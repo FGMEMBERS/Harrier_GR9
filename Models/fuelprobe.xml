@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>fuelprobe.ac</path>
+
+   
+  <animation>
+    <type>rotate</type>
+      <object-name>FuelHose1</object-name>
+       <property>sim/model/FuelHose-positions/FuelHose/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1 </ind><dep> 35 </dep></entry>
+    </interpolation>
+  <center>
+			<x-m>-4.87733</x-m>
+			<y-m>-0.632229</y-m>
+			<z-m>-0.675719</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0.116921</y>
+			<z>0.129442</z>
+		</axis>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>FuelHoseStrut</object-name>
+   	     <property>sim/model/FuelHose-positions/FuelHose/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>  0 </dep></entry>
+      <entry><ind> 0.35 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1 </ind><dep> -40 </dep></entry>
+    </interpolation>
+  <center>
+			<x-m>-5.656322</x-m>
+			<y-m>-0.515026</y-m>
+			<z-m>-0.832954</z-m>
+		</center>
+		<axis>
+			<x>-0.000474</x>
+			<y>0.057009</y>
+			<z>0.057686</z>
+		</axis>
+  </animation>
+  
+  <animation>
+    <type>translate</type>
+      <object-name>FuelHose1</object-name>
+    <property>sim/model/FuelHose-positions/FuelHose/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1 </ind><dep> -0.25 </dep></entry>
+    </interpolation>
+   <offset-m>0.430444</offset-m>
+		<axis>
+			<x>0.427797</x>
+			<y>-0.016672</y>
+			<z>0.044651</z>
+		</axis>
+  </animation>
+  
+</PropertyList>

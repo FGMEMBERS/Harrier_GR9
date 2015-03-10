@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+<path>fan.ac</path>
+
+<animation>
+<type>spin</type>
+<object-name>Fan</object-name>
+<property>engines/engine/n1</property>
+<factor>100</factor>   
+<center>
+<x-m>-14.1426</x-m>
+<y-m>-0.0000</y-m>
+<z-m>-6.0354</z-m>
+</center>
+<axis>
+<x>-1</x>
+<y>0</y>
+<z>0</z>
+</axis>
+</animation>
+
+
+</PropertyList>

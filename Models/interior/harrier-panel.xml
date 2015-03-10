@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <!-- Dash-->
+ 
+<model>
+    <path>Aircraft/Harrier_GR9/Models/Interior/panel.ac</path>
+    <offsets>
+      <x-m> -0.0 </x-m>
+      <y-m> 0</y-m>
+      <z-m> -0.4 </z-m>
+    </offsets>
+  </model>
+<!--
+	<model>
+		<name>gearLock</name>
+		<path>Aircraft/harrier/Panel/gearLock/gearLockIndicator.xml</path>
+		<offsets>
+			<x-m>-15.690</x-m>
+			<y-m>-0.288</y-m>
+			<z-m>-5.52</z-m>
+			<pitch-deg>-20</pitch-deg>
+		</offsets>
+ 	</model> -->
+	<model>
+		<name>radar</name>
+		<path>Aircraft/Harrier_GR9/Models/Interior/radar/radar.xml</path>
+		<offsets>
+			<x-m>2.58</x-m>
+			<y-m>0.14</y-m>
+			<z-m>0.87</z-m>
+			<pitch-deg>-11</pitch-deg>
+		</offsets>
+ 	</model>
+	<model>
+		<name>enav</name>
+		<path>Aircraft/Harrier_GR9/Models/Interior/enav/enav.xml</path>
+		<offsets>
+			<x-m>2.58</x-m>
+			<y-m>-0.145</y-m>
+			<z-m>0.87</z-m>
+			<pitch-deg>-11</pitch-deg>
+		</offsets>
+ 	</model>
+	
+	<model>
+		<name>Altimiter</name>
+		<path>Aircraft/Harrier_GR9/Models/Interior/alt/alt.xml</path>
+		<offsets>
+			<x-m>2.633</x-m>
+			<y-m>0.11</y-m>
+			<z-m>0.76</z-m>
+			<pitch-deg>-15</pitch-deg>
+		</offsets>
+ 	</model>
+	
+	
+	<model>
+		<name>vertical speed</name>
+		<path>Aircraft/Harrier_GR9/Models/Interior/vsi-6/vsi-3d.xml</path>
+		<offsets>
+			<x-m>2.635</x-m>
+			<y-m>0.022</y-m>
+			<z-m>0.73</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+ 	</model>
+	
+	<model>
+		<name>vertical speed</name>
+		<path>Aircraft/Harrier_GR9/Models/Interior/accel/accel.xml</path>
+		<offsets>
+			<x-m>2.635</x-m>
+			<y-m>-0.04</y-m>
+			<z-m>0.73</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+ 	</model>
+	
+	<model>
+		<name>attitude indicator</name>
+		<path>Aircraft/Harrier_GR9/Models/Interior/ai/ai.xml</path>
+		<offsets>
+			<x-m>2.63</x-m>
+			<y-m>0.022</y-m>
+			<z-m>0.81</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+ 	</model>
+	
+	<!--
+	<model>
+		<name>direction</name>
+		<path>Aircraft/Harrier_GR9/Models/Interior/remote/remote.xml</path>
+		<offsets>
+			<x-m>-15.72</x-m>
+			<y-m>-.033</y-m>
+			<z-m>-5.630</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+ 	</model>
+	-->
+	
+	<model>
+		<name>Thrust Vector Indicator</name>
+		<path>Aircraft/Harrier_GR9/Models/Interior/thrust_vector_indicator/tvi.xml</path>
+		<offsets>
+			<x-m>2.54</x-m>
+			<y-m>0.23</y-m>
+			<z-m>1.0</z-m>
+			<pitch-deg>-11</pitch-deg>
+		</offsets>
+ 	</model>	
+	
+	
+	<model>
+		<name>SpeedIndicator</name>
+		<path>Aircraft/Harrier_GR9/Models/Interior/asi600/asi600-3d.xml</path>
+		<offsets>
+			<x-m>2.625</x-m>
+			<y-m>-0.04</y-m>
+			<z-m>0.79</z-m>
+			<pitch-deg>-12</pitch-deg>
+		</offsets>
+ 	</model>
+<!--	<model>
+		<name>Altimeter</name>
+		<path>Aircraft/Harrier_GR9/Models/Interior/alt/alt.xml</path>
+		<offsets>
+			<x-m>-15.73</x-m>
+			<y-m>0.049</y-m>
+			<z-m>-5.547</z-m>
+			<pitch-deg>-13</pitch-deg>
+		</offsets>
+ 	</model>				
+	<model>
+		<name>MagCompass</name>
+		<path>Aircraft/Harrier_GR9/Models/Interior/mag-compass/mag-compass.xml</path>
+		<offsets>
+			<x-m>-15.73</x-m>
+			<y-m>0.275</y-m>
+			<z-m>-5.560</z-m>
+			<pitch-deg>-28</pitch-deg>
+		</offsets>
+ 	</model>
+	-->
+	
+</PropertyList>
